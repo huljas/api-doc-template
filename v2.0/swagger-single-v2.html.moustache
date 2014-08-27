@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>API Document</title>
+
+<xmp theme="united" style="display:none;">
+
+# API
+
+{{#apiDocuments}}
+
+# {{index}} {{resourcePath}}
+
+{{#apis}}
+
+{{#operations}}
+
+## {{index}}.{{opIndex}} {{httpMethod}} {{nickname}}
+
+{{summary}}
+
+> {{httpMethod}} {{url}}
+
+{{{notes}}}
+
+### Parameters
+
+{{#parameters}}
+
+#### {{paramType}}
+
+{{#paras}}
+
+> **{{name}}** : {{#linkType}}<a href="#{{linkType}}">{{type}}</a>{{/linkType}}{{^linkType}}{{type}}{{/linkType}}, {{#required}}REQUIRED{{/required}}{{^required}}optional{{/required}} - {{description}}
+
+{{/paras}}
+{{/parameters}}
+
+{{#responseClass}}
+### Response body
+
+#### [{{className}}](#{{classLinkName}}){{^genericClasses}}{{/genericClasses}}{{#genericClasses}}< [{{className}}](#{{classLinkName}}) >{{/genericClasses}}
+{{/responseClass}}
+
+### Error codes
+
+{{#errorResponses}}
+{{code}}: {{message}}
+{{/errorResponses}}
+
+- - -
+{{/operations}}
+{{/apis}}
+{{/apiDocuments}}
+
+## Data Types
+
+{{#dataTypes}}
+
+### <a name="{{name}}">{{name}}</a>
+
+{{#items}}
+
+> **{{name}}** : {{#linkType}}<a href="#{{linkType}}">{{type}}</a>{{/linkType}}{{^linkType}}{{type}}{{/linkType}} - {{description}}
+
+{{/items}}
+
+{{/dataTypes}}
+
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
